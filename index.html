@@ -1,4 +1,507 @@
-<!-- Project 2 -->
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Waad Alamri | Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f7f7f7;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            background: white;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        nav .logo {
+            font-size: 22px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-size: 15px;
+        }
+
+        nav ul li a:hover {
+            color: #666;
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            padding: 80px 10%;
+            background: white;
+        }
+
+        .hero-content {
+            max-width: 750px;
+        }
+
+        .hero h1 {
+            font-size: 58px;
+            margin-bottom: 15px;
+        }
+
+        .hero h2 {
+            font-size: 25px;
+            font-weight: normal;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 12px 22px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            border: 1px solid #222;
+        }
+
+        .btn-primary {
+            background: #222;
+            color: white;
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #222;
+        }
+
+        /* Sections */
+        section {
+            padding: 80px 10%;
+        }
+
+        .section-title {
+            font-size: 35px;
+            margin-bottom: 35px;
+        }
+
+        .about {
+            background: #f7f7f7;
+        }
+
+        .about p {
+            max-width: 800px;
+            color: #666;
+            font-size: 17px;
+        }
+
+        /* Skills */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+        }
+
+        .skill {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.05);
+        }
+
+        .skill h3 {
+            margin-bottom: 8px;
+        }
+
+        .skill p {
+            color: #777;
+            font-size: 14px;
+        }
+
+        /* Projects */
+        .projects {
+            background: #f7f7f7;
+        }
+
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+        }
+
+        .project-image {
+            height: 210px;
+            background: #ddd;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .project-images {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            padding: 8px;
+            background: #ddd;
+        }
+
+        .project-images img {
+            width: 100%;
+            height: 190px;
+            object-fit: cover;
+            border-radius: 6px;
+        }
+
+        .project-content {
+            padding: 25px;
+        }
+
+        .project-content h3 {
+            margin-bottom: 10px;
+        }
+
+        .project-content p {
+            color: #666;
+            font-size: 15px;
+            margin-bottom: 15px;
+        }
+
+        .tools {
+            font-size: 13px;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .project-link {
+            display: inline-block;
+            text-decoration: none;
+            background: #222;
+            color: white;
+            padding: 10px 18px;
+            border-radius: 7px;
+            font-size: 14px;
+        }
+
+        /* Experience */
+        .experience-box {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            max-width: 800px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.05);
+        }
+
+        .experience-box h3 {
+            margin-bottom: 5px;
+        }
+
+        .experience-box .role {
+            color: #777;
+            margin-bottom: 15px;
+        }
+
+        /* Contact */
+        .contact {
+            background: #222;
+            color: white;
+            text-align: center;
+        }
+
+        .contact p {
+            color: #ccc;
+            margin-bottom: 25px;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .contact-links a {
+            color: white;
+            text-decoration: none;
+            border: 1px solid #777;
+            padding: 10px 18px;
+            border-radius: 7px;
+        }
+
+        .contact-links a:hover {
+            background: white;
+            color: #222;
+        }
+
+        /* Footer */
+        footer {
+            background: #181818;
+            color: #999;
+            text-align: center;
+            padding: 20px;
+            font-size: 13px;
+        }
+
+        /* Mobile */
+        @media (max-width: 700px) {
+
+            nav {
+                padding: 18px 5%;
+            }
+
+            nav ul {
+                gap: 12px;
+            }
+
+            nav ul li a {
+                font-size: 12px;
+            }
+
+            .hero {
+                padding: 70px 7%;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .hero h2 {
+                font-size: 20px;
+            }
+
+            section {
+                padding: 60px 7%;
+            }
+
+            .project-images {
+                grid-template-columns: 1fr;
+            }
+
+            .project-images img {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">WAAD ALAMRI</div>
+
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- Hero Section -->
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h1>Waad Alamri</h1>
+
+            <h2>
+                Management Information Systems Graduate
+            </h2>
+
+            <p>
+                MIS graduate with an interest in Data Analytics,
+                Business Intelligence, and Data Visualization.
+                Passionate about transforming data into meaningful
+                insights and practical solutions.
+            </p>
+
+            <div class="buttons">
+
+                <a href="#projects" class="btn btn-primary">
+                    View Projects
+                </a>
+
+                <a href="https://www.linkedin.com/"
+                   target="_blank"
+                   class="btn btn-secondary">
+                    LinkedIn
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- About -->
+    <section class="about" id="about">
+
+        <h2 class="section-title">
+            About Me
+        </h2>
+
+        <p>
+            Management Information Systems graduate with a strong interest
+            in data analytics, business intelligence, and data visualization.
+            Skilled in Power BI, Excel, Power Query, DAX, and data analysis.
+            Experienced in developing dashboards, organizing data, and
+            transforming information into clear and actionable insights.
+            Continuously developing technical and analytical skills to
+            contribute to data-driven business solutions.
+        </p>
+
+    </section>
+
+
+    <!-- Skills -->
+    <section id="skills">
+
+        <h2 class="section-title">
+            Skills
+        </h2>
+
+        <div class="skills-container">
+
+            <div class="skill">
+                <h3>Power BI</h3>
+                <p>Dashboard Development & Data Visualization</p>
+            </div>
+
+            <div class="skill">
+                <h3>Excel</h3>
+                <p>Data Organization & Analysis</p>
+            </div>
+
+            <div class="skill">
+                <h3>Power Query</h3>
+                <p>Data Cleaning & Transformation</p>
+            </div>
+
+            <div class="skill">
+                <h3>DAX</h3>
+                <p>Measures & Calculations</p>
+            </div>
+
+            <div class="skill">
+                <h3>Python</h3>
+                <p>Programming & Data Analysis</p>
+            </div>
+
+            <div class="skill">
+                <h3>HTML / CSS</h3>
+                <p>Basic Web Development</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Projects -->
+    <section class="projects" id="projects">
+
+        <h2 class="section-title">
+            Projects
+        </h2>
+
+        <div class="projects-container">
+
+
+            <!-- Project 1 -->
+            <div class="project-card">
+
+                <div class="project-images">
+
+                    <img src="images/kasch-dashboard.png"
+                         alt="KASCH Patient Experience Dashboard">
+
+                    <img src="images/kasch2-dashboard.png"
+                         alt="KASCH Patient Experience Dashboard Page 2">
+
+                </div>
+
+                <div class="project-content">
+
+                    <h3>
+                        KASCH Patient Experience Dashboard
+                    </h3>
+
+                    <p>
+                        An interactive dashboard developed to analyze
+                        patient experience issues, departments, priorities,
+                        resolution status, and satisfaction, providing
+                        organized insights to support better follow-up
+                        and decision-making.
+                    </p>
+
+                    <div class="tools">
+                        <strong>Tools:</strong>
+                        Power BI · Excel · Power Query · DAX
+                    </div>
+
+                    <a href="kasch.html" class="project-link">
+                        View Project
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- Project 2 -->
 <div class="project-card">
 
     <div class="project-image">
@@ -33,6 +536,89 @@
     </div>
 
 </div>
+           
+
+
+        </div>
+
+    </section>
+
+
+    <!-- Experience -->
+    <section id="experience">
+
+        <h2 class="section-title">
+            Experience
+        </h2>
+
+        <div class="experience-box">
+
+            <h3>
+                King Abdullah Specialized Children’s Hospital
+            </h3>
+
+            <div class="role">
+                Patient Experience Department
+            </div>
+
+            <p>
+                Cooperative training experience involving patient
+                experience activities, handling feedback and complaints,
+                following up on patient needs, and working with hospital
+                systems and data. The experience contributed to developing
+                skills in communication, problem-solving, data organization,
+                and professional interaction.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+
+        <h2 class="section-title">
+            Let's Connect
+        </h2>
+
+        <p>
+            Feel free to connect with me through LinkedIn, GitHub,
+            or email.
+        </p>
+
+        <div class="contact-links">
+
+            <a href="https://www.linkedin.com/"
+               target="_blank">
+                LinkedIn
+            </a>
+
+            <a href="https://github.com/waad-21"
+               target="_blank">
+                GitHub
+            </a>
+
+            <a href="mailto:waad.7alamri@gmail.com">
+                Email
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+
+        © 2026 Waad Alamri. All rights reserved.
+
+    </footer>
+
+</body>
+</html>
+
+
 
 
 
