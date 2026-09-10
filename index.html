@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -177,8 +178,28 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            color: #777;
-            font-size: 16px;
+            overflow: hidden;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .project-images {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            padding: 8px;
+            background: #ddd;
+        }
+
+        .project-images img {
+            width: 100%;
+            height: 190px;
+            object-fit: cover;
+            border-radius: 6px;
         }
 
         .project-content {
@@ -300,6 +321,14 @@
             section {
                 padding: 60px 7%;
             }
+
+            .project-images {
+                grid-template-columns: 1fr;
+            }
+
+            .project-images img {
+                height: 200px;
+            }
         }
     </style>
 </head>
@@ -328,12 +357,14 @@
             <h1>Waad Alamri</h1>
 
             <h2>
-                Management Information Systems Student
+                Management Information Systems Graduate
             </h2>
 
             <p>
-                Interested in Data Analytics, Business Intelligence,
-                and Data Visualization.
+                MIS graduate with an interest in Data Analytics,
+                Business Intelligence, and Data Visualization.
+                Passionate about transforming data into meaningful
+                insights and practical solutions.
             </p>
 
             <div class="buttons">
@@ -342,7 +373,7 @@
                     View Projects
                 </a>
 
-                <a href="https://www.linkedin.com/" 
+                <a href="https://www.linkedin.com/"
                    target="_blank"
                    class="btn btn-secondary">
                     LinkedIn
@@ -363,10 +394,13 @@
         </h2>
 
         <p>
-            Management Information Systems student with an interest in
-            data analytics, business intelligence, and data visualization.
-            Experienced in working with Power BI, Excel, Power Query,
-            and data analysis projects.
+            Management Information Systems graduate with a strong interest
+            in data analytics, business intelligence, and data visualization.
+            Skilled in Power BI, Excel, Power Query, DAX, and data analysis.
+            Experienced in developing dashboards, organizing data, and
+            transforming information into clear and actionable insights.
+            Continuously developing technical and analytical skills to
+            contribute to data-driven business solutions.
         </p>
 
     </section>
@@ -429,8 +463,14 @@
             <!-- Project 1 -->
             <div class="project-card">
 
-                <div class="project-image">
-                    KASCH Dashboard Preview
+                <div class="project-images">
+
+                    <img src="images/kasch-dashboard.png"
+                         alt="KASCH Patient Experience Dashboard">
+
+                    <img src="images/kasch2-dashboard.png"
+                         alt="KASCH Patient Experience Dashboard Page 2">
+
                 </div>
 
                 <div class="project-content">
@@ -440,9 +480,11 @@
                     </h3>
 
                     <p>
-                        An interactive dashboard designed to analyze
-                        patient experience issues, departments,
-                        priorities, resolution status, and satisfaction.
+                        An interactive dashboard developed to analyze
+                        patient experience issues, departments, priorities,
+                        resolution status, and satisfaction, providing
+                        organized insights to support better follow-up
+                        and decision-making.
                     </p>
 
                     <div class="tools">
@@ -463,7 +505,10 @@
             <div class="project-card">
 
                 <div class="project-image">
-                    Amazon Sales Dashboard Preview
+
+                    <img src="images/amazon-dashboard.png"
+                         alt="Amazon India Sales 2025 Dashboard">
+
                 </div>
 
                 <div class="project-content">
@@ -473,9 +518,10 @@
                     </h3>
 
                     <p>
-                        An interactive sales analytics dashboard
-                        designed to analyze sales performance across
-                        products, locations, payment methods, and time.
+                        An interactive sales analytics dashboard designed
+                        to analyze sales performance across products,
+                        locations, payment methods, and time, providing
+                        clear insights into business performance.
                     </p>
 
                     <div class="tools">
@@ -517,8 +563,10 @@
             <p>
                 Cooperative training experience involving patient
                 experience activities, handling feedback and complaints,
-                following up on patient needs, and working with
-                hospital systems and data.
+                following up on patient needs, and working with hospital
+                systems and data. The experience contributed to developing
+                skills in communication, problem-solving, data organization,
+                and professional interaction.
             </p>
 
         </div>
@@ -568,3 +616,5 @@
 
 </body>
 </html>
+```
+
